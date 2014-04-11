@@ -1,13 +1,50 @@
-* {}
+* {
+  
+}
 
-body {}
+body {
+  background-color: #f0f0f0;
+}
+
+header {
+
+}
+
+thead {
+
+}
+
+table {
+  
+}
+
+th {
+  text-align: center;
+}
+
+#wrap {
+  max-width: 600px;
+  min-width: 400px;
+  margin: 0 auto;
+}
 
 #content {
-  max-width: 600px;
-  margin: 0 auto;
-  border: 1px solid red;
+  background-color: #ffffff;
+  padding: 5px;
+}
+
+#rules-table{
+  width: 100%;
+
+}
+
+.remove {
+  cursor: pointer;
+  width: 16px;
+  height: 16px;
 }
 
 #template {
-  visibility: hidden;
+  display: none;
+  /*visibility: collapse;*/
 }

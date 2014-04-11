@@ -3,24 +3,51 @@
 <head>
 <title>Downloads Sorter - Options</title>
 <link rel="stylesheet" type="text/css" href="options.css">
+<script src="default-rules.js"></script>
 <script src="options.js"></script>
 </head>
 <body>
+<div id="wrap">
+  <header>
+      <h1>Downloads Sorter</h1>
+  </header>
 <div id="content">
-  <table>
+  <h2>Rules:</h2>
+  <table id="rules-table">
+    <thead>
+      <tr>
+        <th></th>
+        <th>Group</th>
+        <th>Pattern</th>
+        <th>Path</th>
+        <th>Enable</th>
+      </tr>
+    </thead>
     <tbody id="rules">
       <tr id="template">
+        <td ><img class="remove" src="resources/icon-remove.png"/></td>
+        <td>
+          <select id="groups-template" class="groups">
+            <option value="other" class="other">Other</option>
+          </select>
+        </td>
         <td>
           <input class="pattern" type="text" />
         </td>
         <td>
           <input class="path" type="text" />
         </td>
+        <td>
+          <input type="checkbox" name="enabled" checked>
+        </td>
       </tr>
     </tbody>
   </table>
   <button id="new_rule">New Rule</button>
   <button id="save_rule">Save</button>
+</div>
+  
+
 </div>
 </body>
 </body>

@@ -1,4 +1,5 @@
 
+var groups = {}
 
 function Rule(data) {
   var rules = document.getElementById('rules');
@@ -24,14 +25,31 @@ function Rule(data) {
   this.getElement('path').onchange = function(){
     rule.path = this.value;
   }
-}
 
-Rule.prototype.getElement = function(name) {
-  return document.querySelector('#' + this.node.id + ' .' + name);
+  this.getElement('remove').onclick = function(){
+    rule.remove();
+  }
+  this.getElement('groups').onchange = function(){
+    var pattern = groups[this.item().value];
+    var element = rule.getElement('pattern')
+    if(pattern != 'undefined'){
+      element.value = pattern;
+      element.disable = true;
+    }else{
+      element.disable = false;
+    }
+  }
 }
-
 
 Rule.current_id = 0;
+Rule.prototype.remove = function(){
+  this.node.parentElement.removeChild(this.node);
+}
+
+Rule.prototype.getElement = function(name){
+  return this.node.getElementsByClassName(name).item(0);
+}
+
 
 function loadRules() {
   var rules = localStorage.rules;
@@ -54,8 +72,30 @@ function saveRules() {
   }));
 }
 
+function parseFile(file) {
+   var request = new XMLHttpRequest();
+   request.open("GET", file, false);
+   request.send(null)
+   return JSON.parse(request.responseText);
+}
+
+function addDefautlRules(rules, select){
+  for(var i = 0; i < rules.length; i++){
+    var option = document.createElement('option');
+    option.text = rules[i].name;
+    select.add(option);
+    groups[rules[i].name] = rules[i].pattern;
+  }
+}
+
 window.onload = function() {
+  var gr = document.getElementById('groups-template');
+  addDefautlRules(defaultRules, gr);
   loadRules();
+
+  groups.onselect = function(){
+    console.log("Select")
+  };
   document.getElementById('new_rule').onclick = function() {
     new Rule();
   };
