@@ -11,45 +11,43 @@
   <header>
       <h1>Downloads Sorter</h1>
   </header>
-<div id="content">
-  <h2>Rules:</h2>
-  <table id="rules-table">
-    <thead>
-      <tr>
-        <th></th>
-        <th>Group</th>
-        <th>Pattern</th>
-        <th>Path</th>
-        <th>Enable</th>
-      </tr>
-    </thead>
-    <tbody id="rules">
-      <tr id="template">
-        <td ><img class="remove" src="resources/icon-remove.png"/></td>
-        <td>
-          <select id="groups-template" class="groups">
-            <option value="other" class="other">Other</option>
-          </select>
-        </td>
-        <td>
-          <input class="pattern" type="text" />
-        </td>
-        <td>
-          <input class="path" type="text" />
-        </td>
-        <td>
-          <input type="checkbox" name="enabled" checked>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-  <button id="new_rule">New Rule</button>
-  <button id="save_rule">Save</button>
+  <div id="content">
+    <button id="save">Save</button>
+    <h2>Rules:</h2>
+    <table id="rules-table">
+      <thead>
+        <tr>
+          <th class='remove'></th>
+          <th>Group</th>
+          <th>Pattern</th>
+          <th>Path</th>
+          <th>Enable</th>
+        </tr>
+      </thead>
+      <tbody id="rules">
+        <tr id="template">
+          <td class='remove'>
+            <img class="remove clickable" src="resources/icon-remove.png"/>
+          </td>
+          <td>
+            <select id="groups-template" class="groups">
+              <option value="other" class="other">Other</option>
+            </select>
+          </td>
+          <td class="files-list">
+          </td>
+          <td>
+            <input class="path" type="text" />
+          </td>
+          <td>
+            <input class="clickable" type="checkbox" name="enabled" checked>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <button id="new_rule">New Rule</button>
+  </div>
 </div>
-  
-
-</div>
-</body>
 </body>
 </html>
 

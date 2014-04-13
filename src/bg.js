@@ -6,7 +6,9 @@ chrome.downloads.onDeterminingFilename.addListener(function(item, suggest) {
     localStorage.rules = JSON.stringify([]);
   }
   rules.forEach(function(element, index){
-    var regex = new RegExp(element.pattern, "i");
+    var list =  element.list.join("|");
+    var pattern = "[^\\s]+(\\.(tags))$".replace('tags', list);
+    var regex = new RegExp(pattern, "i");
     if(regex.test(item.filename)){
       suggest({filename: element.path + '/' + item.filename});
     }

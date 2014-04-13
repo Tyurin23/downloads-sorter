@@ -15,11 +15,21 @@ thead {
 }
 
 table {
-  
+  text-align: center;
 }
 
 th {
   text-align: center;
+}
+
+tr {
+
+}
+
+td{
+  text-align: center;
+  overflow: hidden;
+  word-wrap:break-word;
 }
 
 #wrap {
@@ -44,7 +54,78 @@ th {
   height: 16px;
 }
 
+th.remove,td.remove {
+  width: 20px; 
+}
+
+
 #template {
   display: none;
   /*visibility: collapse;*/
+}
+
+button {
+  width: 100%;
+  border: none;
+  height: 24px;
+  cursor: pointer;
+}
+
+#save {
+  background-color: #0f0;
+}
+
+.data-list {
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  border-radius: 8px;
+}
+
+.empty-list {
+  background-color: #787878;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.data-list > input {
+  display: none;
+}
+
+.data-list > ul {
+  list-style-type: none;
+  background-color: #666;
+  border: 2px solid #444;
+  padding: 0px;
+}
+
+.data-list > ul > li {
+  overflow: auto;
+  list-style-position: inside;
+  background-color: #888;
+  border-radius: 5px;
+  border: 1px solid #444;
+  width: 100%;
+}
+
+.data-list > ul > li > span {
+  float: left;
+  margin: 0 2px 0 2px;
+}
+
+.data-list > ul > li:hover {
+  background-color: #999;
+}
+
+.data-list > ul > li > a {
+  float: right;
+  background-color: #777; 
+  border-radius: 5px;
+  width: 20%;
+  margin: 1px;
+  text-decoration: none;
+}
+
+.clickable {
+  cursor: pointer;
 }
